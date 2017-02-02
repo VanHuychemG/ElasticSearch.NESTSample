@@ -1,0 +1,9 @@
+﻿﻿.vs/
+bin/
+obj/
+
+*.suo
+*.user
+
+wwwroot/libs/
+node_modules
