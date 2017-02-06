@@ -44,13 +44,17 @@ namespace ElasticSearch.NESTSample.Infrastructure.Mapping
                    .TermVector(TermVectorOption.WithPositionsOffsetsPayloads)
                )
 
-               .Text(t => t
-                   .Name(p => p.Language)
-                   .Analyzer("keyword"))
+               //.Text(t => t
+               //    .Name(p => p.Language)
+               //    .Analyzer("keyword"))
+               .Keyword(t => t
+                   .Name(p => p.Language))
 
                 .Nested<Author>(x => x
                     .Name(y => y.Authors)
                     .Properties(z => z
+                        .Keyword(a => a
+                            .Name(b => b.Id))
                         .Keyword(a => a
                             .Name(b => b.Firstname))
                         .Keyword(a => a
@@ -91,13 +95,17 @@ namespace ElasticSearch.NESTSample.Infrastructure.Mapping
                     .TermVector(TermVectorOption.WithPositionsOffsetsPayloads)
                 )
 
-                .Text(t => t
-                    .Name(p => p.Language)
-                    .Analyzer("keyword"))
+               //.Text(t => t
+               //    .Name(p => p.Language)
+               //    .Analyzer("keyword"))
+               .Keyword(t => t
+                   .Name(p => p.Language))
 
                 .Nested<Author>(x => x
                     .Name(y => y.Authors)
                     .Properties(z => z
+                        .Keyword(a => a
+                            .Name(b => b.Id))
                         .Keyword(a => a
                             .Name(b => b.Firstname))
                         .Keyword(a => a

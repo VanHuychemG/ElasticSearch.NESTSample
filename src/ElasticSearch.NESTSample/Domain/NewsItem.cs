@@ -38,6 +38,9 @@ namespace ElasticSearch.NESTSample.Domain
 
     public class Author
     {
+        [JsonProperty("id")]
+        public Guid Id { get; set; }
+
         [JsonProperty("firstName")]
         public string Firstname { get; set; }
 
