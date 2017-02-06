@@ -1,5 +1,6 @@
 ﻿using System;
-
+using System.Collections;
+using System.Collections.Generic;
 using Newtonsoft.Json;
 
 namespace ElasticSearch.NESTSample.Domain
@@ -28,7 +29,19 @@ namespace ElasticSearch.NESTSample.Domain
         [JsonProperty("language")]
         public string Language { get; set; }
 
+        [JsonProperty("authors")]
+        public List<Author> Authors { get; set; }
+
         [JsonIgnore]
         public string TargetIndex { get; set; }
+    }
+
+    public class Author
+    {
+        [JsonProperty("firstName")]
+        public string Firstname { get; set; }
+
+        [JsonProperty("lastName")]
+        public string Lastname { get; set; }
     }
 }

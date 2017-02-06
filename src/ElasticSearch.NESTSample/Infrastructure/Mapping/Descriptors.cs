@@ -47,6 +47,15 @@ namespace ElasticSearch.NESTSample.Infrastructure.Mapping
                .Text(t => t
                    .Name(p => p.Language)
                    .Analyzer("keyword"))
+
+                .Nested<Author>(x => x
+                    .Name(y => y.Authors)
+                    .IncludeInRoot()
+                    .Properties(z => z
+                        .Keyword(a => a
+                            .Name(b => b.Firstname))
+                        .Keyword(a => a
+                            .Name(b => b.Lastname))))
            );
 
         public static TypeMappingDescriptor<NewsItem> FrenchMappings(TypeMappingDescriptor<NewsItem> map) => map
@@ -86,6 +95,15 @@ namespace ElasticSearch.NESTSample.Infrastructure.Mapping
                 .Text(t => t
                     .Name(p => p.Language)
                     .Analyzer("keyword"))
+
+                .Nested<Author>(x => x
+                    .Name(y => y.Authors)
+                    .IncludeInRoot()
+                    .Properties(z => z
+                        .Keyword(a => a
+                            .Name(b => b.Firstname))
+                        .Keyword(a => a
+                            .Name(b => b.Lastname))))
             );
     }
 }
