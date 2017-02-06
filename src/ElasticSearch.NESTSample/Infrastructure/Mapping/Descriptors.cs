@@ -50,7 +50,6 @@ namespace ElasticSearch.NESTSample.Infrastructure.Mapping
 
                 .Nested<Author>(x => x
                     .Name(y => y.Authors)
-                    .IncludeInRoot()
                     .Properties(z => z
                         .Keyword(a => a
                             .Name(b => b.Firstname))
@@ -98,7 +97,6 @@ namespace ElasticSearch.NESTSample.Infrastructure.Mapping
 
                 .Nested<Author>(x => x
                     .Name(y => y.Authors)
-                    .IncludeInRoot()
                     .Properties(z => z
                         .Keyword(a => a
                             .Name(b => b.Firstname))
