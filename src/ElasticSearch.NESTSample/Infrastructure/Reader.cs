@@ -44,8 +44,8 @@ namespace ElasticSearch.NESTSample.Infrastructure
                     PublishDateTime = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"),
                     Authors = new List<Author>
                     {
-                        new Author { Firstname = "John", Lastname = "Doe"},
-                        new Author { Firstname = "Jane", Lastname = "Doe"}
+                        new Author { Id = Guid.NewGuid(), Firstname = "John", Lastname = "Doe"},
+                        new Author { Id = Guid.NewGuid(),Firstname = "Jane", Lastname = "Doe"}
                     },
                     TargetIndex = $"{_configuration.LiveIndexAlias}-nl-{DateTime.Now.Date:yyyy-MM-dd}"
                 },
@@ -60,8 +60,8 @@ namespace ElasticSearch.NESTSample.Infrastructure
                     PublishDateTime = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"),
                     Authors = new List<Author>
                     {
-                        new Author { Firstname = "Jack", Lastname = "Doe"},
-                        new Author { Firstname = "Jill", Lastname = "Doe"}
+                        new Author { Id = Guid.NewGuid(),Firstname = "Jack", Lastname = "Doe"},
+                        new Author { Id = Guid.NewGuid(),Firstname = "Jill", Lastname = "Doe"}
                     },
                     TargetIndex = $"{_configuration.LiveIndexAlias}-fr-{DateTime.Now.Date:yyyy-MM-dd}"
                 },
